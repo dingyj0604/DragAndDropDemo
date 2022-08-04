@@ -1,0 +1,157 @@
+@themeColor: rgb(242, 205, 206);
+@prepareColor: @themeColor;
+@learningColor: rgb(163, 208, 155);
+@completeColor: rgb(226, 226, 226);
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  .flexCenter;
+
+  .start {
+    width: 200px;
+    height: 60px;
+    border: none;
+
+    .button {
+      height: inherit;
+      width: inherit;
+      font-family: sans-serif;
+      font-size: 15px;
+      background-color: @themeColor;
+      padding: 12px 24px;
+      border: none;
+    }
+  }
+
+  .container {
+    height: 60vh;
+    width: 60vw;
+    .flexCenter;
+    justify-content: space-between;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      width: 18vw;
+      max-width: 220px;
+      min-width: 150px;
+      height: 100%;
+    }
+
+    .title(@bgcolor) {
+      width: 100%;
+      height: 30px;
+      margin-bottom: 24px;
+      background-color: @bgcolor;
+      font-size: 17px;
+      font-weight: 550;
+      .flexCenter;
+    }
+
+    .content(@bgcolor) {
+      width: 100%;
+      flex: 1;
+      padding: 18px 22px;
+      background-color: @bgcolor;
+      box-sizing: border-box;
+      .flexCenter;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: auto;
+    }
+
+    .task {
+      .flexCenter;
+      border: 1px solid #303030;
+      width: 90%;
+      padding: 3px 6px;
+      height: 26px;
+      margin-top: 8px;
+    }
+
+    .task:hover {
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+
+    .left {
+      .box;
+
+      .title {
+        .title(@prepareColor);
+      }
+
+      .content {
+        .content(@prepareColor);
+
+        .task {
+          .task;
+        }
+
+        .input {
+          font-size: 16px;
+          font-weight: 550;
+          border: 1px solid #303030;
+          width: 90%;
+          padding: 3px 6px;
+          height: 26px;
+          margin: 8px 0;
+        }
+
+        .icon {
+          margin-top: 6px;
+        }
+
+        .icon:hover {
+          cursor: pointer;
+          transform: scale(1.1)
+        }
+      }
+    }
+
+    .center {
+      .box;
+
+      .title {
+        .title(@learningColor);
+      }
+
+      .content {
+        .content(@learningColor);
+
+        .task {
+          .task;
+        }
+      }
+
+    }
+
+    .right {
+      .box;
+
+      .title {
+        .title(@completeColor);
+      }
+
+      .content {
+        .content(@completeColor);
+
+        .task {
+          .task;
+        }
+      }
+    }
+
+    .highLight {
+      border: 0.8px solid #2fffee;
+      box-shadow: 0 0 2px 1px #9afcf4e8;
+    }
+  }
+}
