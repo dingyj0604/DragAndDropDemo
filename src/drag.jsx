@@ -13,8 +13,9 @@ const Drag = () => {
   const [completeList, setCompleteList] = useState([]);
   const [showInput, setShowInput] = useState(false); // 是否显示新增输入框
   const [fromListName, setFromListName] = useState(''); // 当前被选中拖拽的任务来自的列表(源列表)名称
-  
+
   useEffect(() => {
+    // 初始化
     if (sessionStorage.getItem('landing')) {
       setLanding(sessionStorage.getItem('landing'));
     }
@@ -128,7 +129,7 @@ const Drag = () => {
           (<div className='start'>
             <button className='button'
               onClick={() => {
-                setLanding('off'); sessionStorage.setItem('landing', 'off');
+                setLanding('off'); sessionStorage.setItem('landing', 'off'); // 防止页面刷新后重启到Start App
               }}>
               Start App
             </button>
