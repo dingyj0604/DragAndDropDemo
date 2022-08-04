@@ -31,7 +31,7 @@
   }
 
   .container {
-    height: 50vh;
+    height: 60vh;
     width: 60vw;
     .flexCenter;
     justify-content: space-between;
@@ -58,12 +58,27 @@
     .content(@bgcolor) {
       width: 100%;
       flex: 1;
-      padding: 16px 12px;
+      padding: 18px 22px;
       background-color: @bgcolor;
       box-sizing: border-box;
       .flexCenter;
       flex-direction: column;
       justify-content: flex-start;
+      overflow: auto;
+    }
+
+    .task {
+      .flexCenter;
+      border: 1px solid #303030;
+      width: 90%;
+      padding: 3px 6px;
+      height: 26px;
+      margin-top: 8px;
+    }
+
+    .task:hover {
+      transform: scale(1.02);
+      cursor: pointer;
     }
 
     .left {
@@ -76,10 +91,25 @@
       .content {
         .content(@prepareColor);
 
+        .task {
+          .task;
+        }
+
+        .input {
+          font-size: 16px;
+          font-weight: 550;
+          border: 1px solid #303030;
+          width: 90%;
+          padding: 3px 6px;
+          height: 26px;
+          margin: 8px 0;
+        }
+
         .icon {
           margin-top: 6px;
         }
-        .icon:hover{
+
+        .icon:hover {
           cursor: pointer;
           transform: scale(1.1)
         }
@@ -95,7 +125,12 @@
 
       .content {
         .content(@learningColor);
+
+        .task {
+          .task;
+        }
       }
+
     }
 
     .right {
@@ -107,7 +142,16 @@
 
       .content {
         .content(@completeColor);
+
+        .task {
+          .task;
+        }
       }
+    }
+
+    .highLight {
+      border: 0.8px solid #2fffee;
+      box-shadow: 0 0 2px 1px #9afcf4e8;
     }
   }
 }
